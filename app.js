@@ -33,9 +33,8 @@ var conversation = new Conversation({
   // username: '<username>',
   // password: '<password>',
   url: 'https://gateway.watsonplatform.net/conversation/api',
-  version_date: '2016-10-21',
-  version: 'v1',
-  alternate_intents: true
+  version_date: '2017-04-21',
+  version: 'v1'
 });
 
 // Endpoint to be call from the client side
@@ -51,7 +50,8 @@ app.post('/api/message', function(req, res) {
   var payload = {
     workspace_id: workspace,
     context: req.body.context || {},
-    input: req.body.input || {}
+    input: req.body.input || {},
+    alternate_intents: true
   };
 
   // Send the input to the conversation service
